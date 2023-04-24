@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./../css/index.css" />
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="active" href="#">IPL 2023</a>
+      <div class="search-container">
+        <form action="#">
+          <input type="text" placeholder="Search Team / Player" name="search" />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="wrapper">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="./../index.html">Home</a></li>
+          <li class="breadcrumb-item active"><a href="#">Team Page</a></li>
+        </ol>
+      </nav>
+      <link
+        href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+        rel="stylesheet"
+        id="bootstrap-css"
+      />
+      <link href="./../css/team.css" rel="stylesheet" />
+      <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      <div class="container">
+        <div class="row">
+          <div class="banner-div">
+            <a class="banner-bg banner-block"></a>
+            <div>
+              <a href="#" class="banner-avatarLink">
+                <img class="banner-avatarImg team-logo" />
+              </a>
+              <div class="banner-divUser">
+                <div class="banner-divName">
+                  <a href="#" class="team-name"></a>
+                </div>
+              </div>
+
+              <div class="banner-divStats">
+                <ul class="banner-Arrange">
+                  <li class="banner-ArrangeSizeFit">
+                    <a href="#" title="">
+                      <span class="banner-StatLabel banner-block"
+                        >Player Count</span
+                      >
+                      <span class="banner-StatValue playerCount"></span>
+                    </a>
+                  </li>
+                  <li class="banner-ArrangeSizeFit">
+                    <a href="#" title="">
+                      <span class="banner-StatLabel banner-block"
+                        >Championship Won</span
+                      >
+                      <span class="banner-StatValue championshipWon"></span>
+                    </a>
+                  </li>
+                  <li class="banner-ArrangeSizeFit">
+                    <a href="#" title="">
+                      <span class="banner-StatLabel banner-block">Top Batsman</span>
+                      <span class="banner-StatValue playerBatsman"></span>
+                    </a>
+                  </li>
+                  <li class="banner-ArrangeSizeFit">
+                    <a href="#" title="">
+                      <span class="banner-StatLabel banner-block">Top Bowler</span>
+                      <span class="banner-StatValue playerBowler"></span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clearfix-custom"></div>
+        <div class="row">
+          <div id="players" class="row view-group"></div>
+        </div>
+      </div>
+      <script src="./../js/team.js"></script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./../css/index.css" />
+  </head>
+  <body>
+    <div class="topnav">
+      <a class="active" href="#">IPL 2023</a>
+      <div class="search-container">
+        <form action="#">
+          <input type="text" placeholder="Search Team / Player" name="search" />
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+    </div>
+    <div class="wrapper">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="./../index.html">Home</a></li>
+          <li class="breadcrumb-item">
+            <a href="./team.html?id=1">Team Page</a>
+          </li>
+          <li class="breadcrumb-item active"><a href="#">Player Info</a></li>
+        </ol>
+      </nav>
+      <link
+        href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+        rel="stylesheet"
+        id="bootstrap-css"
+      />
+      <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+      <link href="./../css/player.css" rel="stylesheet" />
+
+      <div class="container">
+        <form id="frm" action="#" onsubmit="return false;">
+          <div class="row">
+            <div
+              class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad"
+            >
+              <div class="panel panel-info">
+                <div class="panel-heading">
+                  <h3 class="panel-title playerName"></h3>
+                </div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-md-9 col-lg-9">
+                      <table class="table table-user-information">
+                        <tbody>
+                          <tr>
+                            <td>Team Full Name:</td>
+                            <td>
+                              <input
+                                type="text"
+                                id="teamFullName"
+                                name="teamFullName"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Short Name:</td>
+                            <td>
+                              <input
+                                type="text"
+                                id="fullSname"
+                                name="fullSname"
+                              />
+                              <br />
+                              <br />
+                              <input type="text" id="sName" name="sName" />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Won Count:</td>
+                            <td>
+                              <input
+                                type="text"
+                                id="WonCount"
+                                name="WonCount"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Team Icon</td>
+                            <td>
+                              <input
+                                type="text"
+                                id="teamIcon"
+                                name="teamIcon"
+                              />
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <button onclick="saveData()">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      function saveData() {
+        let formData = $("#frm").serializeArray();
+        let obj = {};
+        let teams = JSON.parse(localStorage.getItem("teamArray"));
+        for (let i = 0; i < formData.length; i++) {
+          obj[formData[i].name] = formData[i].value;
+        }
+        obj.id = teams.length + 1;
+        teams.push(obj);
+        console.log(teams);
+        localStorage.setItem("teamArray", JSON.stringify(teams));
+      }
+    </script>
+  </body>
+</html>
